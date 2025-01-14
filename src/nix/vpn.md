@@ -1,46 +1,13 @@
-# NixOS/Nix
+# Configuring a VPN
 
-- [Serving a site](#serving-a-site)
-- [Creating a systemd service](#creating-a-systemd-service)
-- [Configuring the VPN](#configuring-a-vpn)
-  - [Generate keys](#1-generate-keys)
-  - [Configure the server](#2-configure-the-server)
-  - [Configure the client](#3-configure-the-client)
-
-## Serving a site
-
-```nix
-environment.systemPackages = with pkgs; [
-  static-web-server
-];
-
-services.static-web-server = {
-  enable = true;
-  root = "/some/path";
-};
-```
-
-## Creating a systemd service
-
-```nix
-systemd.services.my-service = {
-  script = ''
-      echo "Hello World" > /var/log/hi.log
-  '';
-  wantedBy = [ "multi-user.target" ];
-};
-```
-
-## Configuring a VPN
-
-### 1. Generate keys
+## 1. Generate keys
 
 ```sh
   wg genkey > wireguard-keys/private
   wg pubkey < wireguard-keys/private > wireguard-keys/public
 ```
 
-### 2. Configure the server
+## 2. Configure the server
 
 NOTE: Replace aaa.bbb with the desired IP range.
 
@@ -76,7 +43,7 @@ in {
 };
 ```
 
-### 3. Configure the client
+## 3. Configure the client
 
 NOTE: Replace aaa.bbb with the desired IP range.
 NOTE: Generate the keys on the client as well.
