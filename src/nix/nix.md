@@ -1,5 +1,9 @@
 # NixOS/Nix
 
+- [Attatching NAS](./attatching-nas.md)
+  - [Non nix way](./attatching-nas.md#non-nix-way)
+  - [Configuration](./attatching-nas.md#configuration)
+  - [Credentials](./attatching-nas.md#credentials)
 - [Serving a site](./serving-a-site.md)
 - [Creating a systemd service](./systemd-service.md)
 - [Configuring the VPN](./vpn.md)
