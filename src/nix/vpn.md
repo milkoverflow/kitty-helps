@@ -3,6 +3,7 @@
 ## 1. Generate keys
 
 ```sh
+  umask 077
   wg genkey > wireguard-keys/private
   wg pubkey < wireguard-keys/private > wireguard-keys/public
 ```
