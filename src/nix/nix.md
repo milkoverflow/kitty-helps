@@ -1,5 +1,6 @@
 # NixOS/Nix
 
+- [Creating a golang flake](./golang-flake.md)
 - [Serving a site](./serving-a-site.md)
 - [Creating a systemd service](./systemd-service.md)
 - [Configuring the VPN](./vpn.md)
