@@ -12,5 +12,6 @@
 * [linux]()
   - [wireguard vpn](./linux/vpn.md)
   - [nas](./linux/nas.md)
+  - [gh update](./linux/run_on_gh_update.md)
 
 [Golang](./golang.md)
