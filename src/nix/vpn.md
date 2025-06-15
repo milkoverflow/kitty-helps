@@ -1,4 +1,4 @@
-# Configuring a VPN
+# Configuring a VPN on nixos
 
 ## 1. Generate keys
 
