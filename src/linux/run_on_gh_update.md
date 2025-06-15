@@ -9,15 +9,19 @@ import { createServer } from 'http';
 import { exec } from 'child_process';
 
 const server = createServer((req, res) => {
+  if (req.headers['x-hub-signature-256'] === undefined) {
+    res.writeHead(405, { 'Content-Type': 'text/plain' });
+    res.end('method not allowed');
+  }
   if (req.method === 'POST') {
     req.on('data', _ => { });
     req.on('end', () => {
       console.log('received push');
       exec('git pull', (error) => {
         if (error) {
-          console.error('error reloading', error);
+          console.error('error: ', error);
         } else {
-          console.log('service reloaded');
+          console.log('pulled');
         }
       });
       res.writeHead(200);
