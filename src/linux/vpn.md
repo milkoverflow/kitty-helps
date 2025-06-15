@@ -41,6 +41,6 @@ method=manual
 
 - setup the connection
 ```sh
-nmcli con reload
-nmcli con up wg0
+sudo nmcli con reload
+sudo nmcli con up wg0
 ```
