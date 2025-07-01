@@ -37,6 +37,10 @@ persistent-keepalive=25      # dont wait for host to establish connection
 [ipv4]
 address1=HOST-VPN-IP
 method=manual
+dns=SERVER-IP;
+dns-search=SERVER-DOMAIN
+ignore-auto-dns=true
+never-devault=true
 ```
 
 - setup the connection
